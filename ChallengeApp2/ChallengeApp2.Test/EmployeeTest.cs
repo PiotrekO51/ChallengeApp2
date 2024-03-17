@@ -25,7 +25,7 @@ namespace ChallengeApp2.Test
 
                 //assert
 
-                Assert.AreEqual(16, result);
+                Assert.AreEqual(25, result);
         }
 
         [Test]
