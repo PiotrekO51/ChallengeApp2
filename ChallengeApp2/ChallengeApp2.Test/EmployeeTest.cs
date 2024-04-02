@@ -33,7 +33,7 @@ namespace ChallengeApp2.Test
         {
 
 
-            //arrange
+            //arrange " przygotowanie obiektu"
 
             var emps = new Employee("Piotr", "Nowak", "45cgbgb");
 
