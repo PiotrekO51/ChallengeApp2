@@ -1,10 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ChallengeApp2
+﻿namespace ChallengeApp2
 {
     public class Employee
     {
-
         private List<float> grades = new List<float>();
 
         public Employee(string name, string surename)
@@ -15,12 +12,10 @@ namespace ChallengeApp2
         public string Name { get; private set; }
         public string Surname { get; private set; }
 
-
         public void AddGrade(float grade)
         {
         this.grades.Add(grade);
         }
-
         public Statistics GetStatistics() 
         {
             var statistics = new Statistics();
@@ -35,7 +30,6 @@ namespace ChallengeApp2
                 //statistics.Average = statistics.Average + grade; (równoważne z statistics.Average += grade;)
                 statistics.Average += grade;
             }
-
             //statistics.Average = statistics.Average / this.grades.Count;
             statistics.Average /= this.grades.Count;
 
