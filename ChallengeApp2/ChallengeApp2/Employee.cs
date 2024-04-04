@@ -1,39 +1,45 @@
-﻿namespace ChallengeApp2
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ChallengeApp2
 {
     public class Employee
     {
-        private List<int> rtp = new List<int>();
 
-        // To jest konstruktor
-        public Employee(string name, string surname, string age)
+        private List<float> grades = new List<float>();
+
+        public Employee(string name, string surename)
         {
             this.Name = name;
-            this.Surname = surname;
-            this.Age = age;
-            //this.rtp = 0;
-
+            this.Surname = surename;
         }
-        // To jest property ( pole)
-
         public string Name { get; private set; }
         public string Surname { get; private set; }
-        public string Age { get; private set; }
 
-        public int Result
+
+        public void AddGrade(float grade)
         {
-            get
-            {
-                return this.rtp.Sum();
-            }
+        this.grades.Add(grade);
         }
 
-        // To jest metoda. metoda obsługuje wprowadzanie i zarządzanie zmiennymi  
-
-        public void AddRtp(int number)
+        public Statistics GetStatistics() 
         {
-            // this.rtp = this.rtp + number; inny zapis ale też poprawny
-            this.rtp.Add(number);
+            var statistics = new Statistics();
+            statistics.Average = 0;
+            statistics.Max = float.MinValue;
+            statistics.Min = float.MaxValue;
+
+            foreach (var grade in this.grades)
+            {
+                statistics.Max = Math.Max(statistics.Max, grade);
+                statistics.Min = Math.Min(statistics.Min, grade);
+                //statistics.Average = statistics.Average + grade; (równoważne z statistics.Average += grade;)
+                statistics.Average += grade;
+            }
+
+            //statistics.Average = statistics.Average / this.grades.Count;
+            statistics.Average /= this.grades.Count;
+
+            return statistics;
         }
     }
-
 }
