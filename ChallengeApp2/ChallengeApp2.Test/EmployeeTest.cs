@@ -17,6 +17,7 @@ namespace ChallengeApp2.Test
                 //assert
                 Assert.AreEqual(10, statistics.Max);
         }
+
         [Test]
         public void StatisticsCollectReturnMinValue()
         {
@@ -32,6 +33,7 @@ namespace ChallengeApp2.Test
             //assert
             Assert.AreEqual(5, statistics.Min);
         }
+
         [Test]
         public void StatisticsCollectReturnAverageValue()
         {

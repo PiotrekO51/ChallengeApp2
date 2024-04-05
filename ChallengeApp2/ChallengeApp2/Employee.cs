@@ -9,6 +9,7 @@
             this.Name = name;
             this.Surname = surename;
         }
+
         public string Name { get; private set; }
         public string Surname { get; private set; }
 
@@ -16,6 +17,7 @@
         {
         this.grades.Add(grade);
         }
+
         public Statistics GetStatistics() 
         {
             var statistics = new Statistics();
@@ -30,6 +32,7 @@
                 //statistics.Average = statistics.Average + grade; (równoważne z statistics.Average += grade;)
                 statistics.Average += grade;
             }
+
             //statistics.Average = statistics.Average / this.grades.Count;
             statistics.Average /= this.grades.Count;
 
