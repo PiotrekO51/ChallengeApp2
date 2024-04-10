@@ -26,6 +26,7 @@
                 Console.WriteLine("Wartość nie może być większa niż 100 ");
             }
         }
+
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float value))
@@ -38,6 +39,7 @@
                 Console.WriteLine("Wpisano tekst zamiast wartości ");
             }
         }
+
         public void AddGrade(double grade)
         {
             if (grade >= 0 && grade <= 100)
@@ -49,6 +51,7 @@
                 Console.WriteLine("Wpisano tekst zamiast wartości ");
             }
         }
+
         public void AddGrade(long grade)
         {
             if (grade >= 0 && grade <= 100)
@@ -64,6 +67,7 @@
                 Console.WriteLine("Wartość nie może być większa niż 100 ");
             }
         }
+
         public void AddGrade(char grade)
         {
             if (char.IsLetter(grade))
@@ -76,6 +80,7 @@
                 this.AddGrade(value);
             }
         }
+
         public Statistics GetStatistics() 
         {
             var statistics = new Statistics();
