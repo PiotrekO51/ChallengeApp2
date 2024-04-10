@@ -72,7 +72,7 @@
         {
             if (char.IsLetter(grade))
             {
-                Console.WriteLine($"Wpisano Literę {grade} zamiast wartości ");
+                Console.WriteLine($"Wpisano Literę {grade} zamiast wartości liczbowej ");
             }
             else
             {
