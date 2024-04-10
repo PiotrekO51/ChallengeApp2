@@ -1,6 +1,5 @@
 ﻿namespace ChallengeApp2.Test
 {
-
     public class TypeTest
     {
         [Test]
@@ -11,7 +10,6 @@
             int numb2 = 2;
 
             //act
-
 
             //assert
             Assert.AreEqual(numb1, numb2);
@@ -26,7 +24,6 @@
 
             //act
 
-
             //assert
             Assert.AreEqual(numb3, numb4);
         }
@@ -40,11 +37,9 @@
 
             //act
 
-
             //assert
             Assert.AreEqual(name1,name2);
         }
-
         [Test]
         public void GetEmployeeReturnDifferentName()
         {
@@ -54,7 +49,6 @@
 
             //act
 
-            
             //assert
             Assert.AreEqual(Employee1.Name , Employee2.Name);
         }
@@ -67,8 +61,7 @@
 
             //act
 
-
-            //assert
+           //assert
             Assert.AreEqual(Employee1.Surname, Employee2.Surname);
         }
 

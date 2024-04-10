@@ -9,13 +9,13 @@ namespace ChallengeApp2.Test
                 var employee = new Employee("Piotr", "Ob³ój");
                 employee.AddGrade(5);
                 employee.AddGrade(6);
-                employee.AddGrade(10);
+                employee.AddGrade(9);
               
                 //act
                 var statistics = employee.GetStatistics();
 
                 //assert
-                Assert.AreEqual(10, statistics.Max);
+                Assert.AreEqual(9, statistics.Max);
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace ChallengeApp2.Test
             var employee = new Employee("Piotr", "Ob³ój");
             employee.AddGrade(5);
             employee.AddGrade(6);
-            employee.AddGrade(10);
+            employee.AddGrade(9);
 
             //act
             var statistics = employee.GetStatistics();
@@ -41,11 +41,11 @@ namespace ChallengeApp2.Test
             var employee = new Employee("Piotr", "Ob³ój");
             employee.AddGrade(5);
             employee.AddGrade(6);
-            employee.AddGrade(10);
+            employee.AddGrade(9);
             
             //act
             var statistics = employee.GetStatistics();
-            //assertssert.AreEqual(7, statistics.Average);
+            Assert.AreEqual(Math.Round(6.666,2) ,  Math.Round(statistics.Average, 2 ));
         }
     }
 }
