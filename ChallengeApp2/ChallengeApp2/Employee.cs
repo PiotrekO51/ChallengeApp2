@@ -73,7 +73,7 @@
             else
             {
                 int value = int.Parse(grade.ToString());
-                this.AddGrade(grade);
+                this.AddGrade(value);
             }
         }
         public Statistics GetStatistics() 
