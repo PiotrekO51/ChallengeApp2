@@ -3,21 +3,79 @@
     public class Employee
     {
         private List<float> grades = new List<float>();
-
         public Employee(string name, string surename)
         {
             this.Name = name;
             this.Surname = surename;
         }
-
         public string Name { get; private set; }
         public string Surname { get; private set; }
 
         public void AddGrade(float grade)
         {
-        this.grades.Add(grade);
+            if (grade >= 0 && grade <= 100)
+            { 
+            this.grades.Add(grade);
+            }
+            else if (grade < 0) 
+            {
+                Console.WriteLine("Wartość nie może być mniejsza od zera ");
+            }
+            else if(grade >100)
+            {
+                Console.WriteLine("Wartość nie może być większa niż 100 ");
+            }
         }
-
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float value))
+            //var value = float.Parse(grade);
+            { 
+            this.AddGrade(value);
+            }
+            else
+            {
+                Console.WriteLine("Wpisano tekst zamiast wartości ");
+            }
+        }
+        public void AddGrade(double grade)
+        {
+            if (grade >= 0 && grade <= 100)
+            {
+                this.AddGrade(grade);
+            }
+            else
+            {
+                Console.WriteLine("Wpisano tekst zamiast wartości ");
+            }
+        }
+        public void AddGrade(long grade)
+        {
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else if (grade < 0)
+            {
+                Console.WriteLine("Wartość nie może być mniejsza od zera ");
+            }
+            else if (grade > 100)
+            {
+                Console.WriteLine("Wartość nie może być większa niż 100 ");
+            }
+        }
+        public void AddGrade(char grade)
+        {
+            if (char.IsLetter(grade))
+            {
+                Console.WriteLine("Wpisano Literę zamiast wartości ");
+            }
+            else
+            {
+                int value = int.Parse(grade.ToString());
+                this.AddGrade(grade);
+            }
+        }
         public Statistics GetStatistics() 
         {
             var statistics = new Statistics();
