@@ -29,10 +29,10 @@
 
         public void AddGrade(string grade)
         {
-            if (float.TryParse(grade, out float value))
+            if (float.TryParse(grade, out float gradeAsFloat))
             //var value = float.Parse(grade);
             { 
-            this.AddGrade(value);
+            this.AddGrade(gradeAsFloat);
             }
             else
             {
