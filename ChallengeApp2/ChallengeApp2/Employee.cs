@@ -55,19 +55,8 @@
 
         public void AddGrade(long grade)
         {
-            if (grade >= 0 && grade <= 100)
-            {
                 float result = (float)grade;
                 this.AddGrade(result);
-            }
-            else if (grade < 0)
-            {
-                Console.WriteLine("Wartość nie może być mniejsza od zera ");
-            }
-            else if (grade > 100)
-            {
-                Console.WriteLine("Wartość nie może być większa niż 100 ");
-            }
         }
 
         public void AddGrade(char grade)
