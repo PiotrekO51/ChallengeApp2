@@ -36,26 +36,19 @@
             }
             else
             {
-                Console.WriteLine("Wpisano tekst zamiast wartości ");
+                Console.WriteLine($"Wpisano tekst {grade} zamiast wartości ");
             }
         }
 
         public void AddGrade(double grade)
         {
-            if (grade >= 0 && grade <= 100)
-            {
-                float result = (float)grade;
+                var result = (float)grade;
                 this.AddGrade(result);
-            }
-            else
-            {
-                Console.WriteLine("Wpisano tekst zamiast wartości ");
-            }
         }
 
         public void AddGrade(long grade)
         {
-                float result = (float)grade;
+                var result = (float)grade;
                 this.AddGrade(result);
         }
 
@@ -67,7 +60,7 @@
             }
             else
             {
-                float gradeAsFloat = float.Parse(grade.ToString());
+                var gradeAsFloat = float.Parse(grade.ToString());
                 this.AddGrade(gradeAsFloat);
             }
         }
