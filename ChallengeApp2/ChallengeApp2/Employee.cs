@@ -44,8 +44,7 @@
         {
             if (grade >= 0 && grade <= 100)
             {
-                float gradeAsFloat = (float)grade;
-                this.AddGrade(gradeAsFloat);
+                this.AddGrade((float) grade);
             }
             else
             {
@@ -57,8 +56,7 @@
         {
             if (grade >= 0 && grade <= 100)
             {
-                float gradeAsFloat = (float)grade;
-                this.grades.Add(gradeAsFloat);
+                this.grades.Add((float)grade);
             }
             else if (grade < 0)
             {
