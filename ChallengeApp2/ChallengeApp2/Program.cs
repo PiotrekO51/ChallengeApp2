@@ -13,6 +13,7 @@ var statistics1 = employee.GetStatisticsWithFor();
 var statistics2 = employee.GetStatisticsWithDoWhile();
 var statistics3 = employee.GetStatisticsWithWhile();
 
+Console.WriteLine("====================================");
 Console.WriteLine(" Metoda z wykorzystaniem pętli  ForeEach ");
 Console.WriteLine($"Wartość Max: {statistics.Max}");
 Console.WriteLine($"Średnia wartość: {statistics.Average:N2}");
@@ -35,5 +36,6 @@ Console.WriteLine(" Metoda z wykorzystaniem pętli while ");
 Console.WriteLine($"Wartość Max: {statistics3.Max}");
 Console.WriteLine($"Średnia wartość: {statistics3.Average:N2}");
 Console.WriteLine($"Wartość Min: {statistics3.Min}");
+Console.WriteLine("====================================");
 
 

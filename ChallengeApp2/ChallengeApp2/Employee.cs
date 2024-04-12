@@ -128,7 +128,6 @@ namespace ChallengeApp2
             statistics2.Average /= this.grades.Count;
             return statistics2;
             }
-
         public Statistics GetStatisticsWithWhile()
         {
             var statistics3 = new Statistics();
@@ -149,5 +148,7 @@ namespace ChallengeApp2
 
             return statistics3;
         }
+
+
     }
 }
