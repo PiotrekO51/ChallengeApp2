@@ -6,13 +6,13 @@ namespace ChallengeApp2.Test
         public void StatisticsCollectReturnMaxValue()
         {
               //arrange
-                var employee = new Employee("Piotr", "Ob³ój");
+                var employee = new Employee();
                 employee.AddGrade(5);
                 employee.AddGrade(6);
                 employee.AddGrade(9);
               
                 //act
-                var statistics = employee.GetStatistics();
+                var statistics = employee.GetStatisticsWithForeEach();
 
                 //assert
                 Assert.AreEqual(9, statistics.Max);
@@ -22,13 +22,13 @@ namespace ChallengeApp2.Test
         public void StatisticsCollectReturnMinValue()
         {
             //arrange
-            var employee = new Employee("Piotr", "Ob³ój");
+            var employee = new Employee( );
             employee.AddGrade(5);
             employee.AddGrade(6);
             employee.AddGrade(9);
 
             //act
-            var statistics = employee.GetStatistics();
+            var statistics = employee.GetStatisticsWithForeEach();
 
             //assert
             Assert.AreEqual(5, statistics.Min);
@@ -38,14 +38,34 @@ namespace ChallengeApp2.Test
         public void StatisticsCollectReturnAverageValue()
         {
             //arrange
-            var employee = new Employee("Piotr", "Ob³ój");
+            var employee = new Employee();
             employee.AddGrade(5);
             employee.AddGrade(6);
             employee.AddGrade(9);
             
             //act
-            var statistics = employee.GetStatistics();
+            var statistics = employee.GetStatisticsWithForeEach();
             Assert.AreEqual(Math.Round(6.666,2) ,  Math.Round(statistics.Average, 2 ));
+        }
+        [Test]
+        public void StatisticsCharLetterA()
+        {
+            var employee = new Employee();
+            employee.AddGrade("A");
+                        
+            var statistics = employee.GetStatisticsWithForeEach();
+            Assert.AreEqual('A', statistics.AverageLetther);
+
+        }
+        [Test]
+        public void StatisticsCharLetterB()
+        {
+            var employee = new Employee();
+            employee.AddGrade('B');
+
+            var statistics = employee.GetStatisticsWithForeEach();
+            Assert.AreEqual('B', statistics.AverageLetther);
+
         }
     }
 }

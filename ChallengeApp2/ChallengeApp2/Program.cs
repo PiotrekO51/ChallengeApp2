@@ -1,20 +1,29 @@
 ﻿using ChallengeApp2;
 
-var employee = new Employee("Piotr", "Obłój");
-employee.AddGrade('2');
-employee.AddGrade("ABC");
-employee.AddGrade(-5);
-employee.AddGrade(3);
-employee.AddGrade(11);
-employee.AddGrade(5);
-employee.AddGrade("12");
-var statistics = employee.GetStatisticsWithForeEach();
-var statistics1 = employee.GetStatisticsWithFor();
-var statistics2 = employee.GetStatisticsWithDoWhile();
-var statistics3 = employee.GetStatisticsWithWhile();
+Console.WriteLine("Witamy w Programie oceny Pracowników XYZ");
+Console.WriteLine("========================================");
+Console.WriteLine();
+Console.WriteLine("Podaj ocenę Pracownika : ");
 
-Console.WriteLine("====================================");
-Console.WriteLine(" Metoda z wykorzystaniem pętli  ForeEach ");
-Console.WriteLine($"Wartość Max: {statistics.Max}");
-Console.WriteLine($"Średnia wartość: {statistics.Average:N2}");
-Console.WriteLine($"Wartość Min: {statistics.Min}");
+var employee = new Employee ();
+
+while(true)
+{
+    Console.WriteLine("Podaj kolejną ocenę pracownika");
+    var input = Console.ReadLine();
+    if(input == "q")
+    {
+        break;
+    }
+    employee.AddGrade(input);
+}
+
+var statistics = employee.GetStatisticsWithForeEach();
+Console.WriteLine($" Wartość Max: {statistics.Max}");
+Console.WriteLine($" Średnia wartość: {statistics.Average:N2}");
+Console.WriteLine($" Wartość Min: {statistics.Min}");
+Console.WriteLine($" Średnia wartość: {statistics.AverageLetther:N2}");
+
+
+
+
