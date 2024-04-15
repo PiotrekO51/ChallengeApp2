@@ -4,6 +4,8 @@ namespace ChallengeApp2
 {
     public class Employee
     {
+        private const char sex = 'M';
+
         private List<float> grades = new List<float>();
 
         public Employee()
@@ -23,19 +25,18 @@ namespace ChallengeApp2
 
             if (grade >= 0 && grade <= 100)
             {
+                
                 this.grades.Add(grade);
             }
 
             else if (grade < 0)
-            {
-             
-                Console.WriteLine("Wartość nie może być mniejsza od zera ");
+            { 
+                throw new Exception("Wartość nie może być mniejsza od 0 ");
             }
             
             else if (grade > 100)
             {
-                
-                Console.WriteLine("Wartość nie może być większa niż 100 ");
+                throw new Exception("Wartość nie może być większa niż 100 ");
             }      
         }
 
@@ -62,7 +63,7 @@ namespace ChallengeApp2
             }
             else
             {
-                Console.WriteLine("Wprowadzone znaki nie są liczbami ");
+               throw new Exception("Wprowadzone znaki nie są liczbami ");
             }
         }
 
@@ -91,7 +92,7 @@ namespace ChallengeApp2
                     this.AddGrade(20);
                     break;
                default:
-                  break;
+                    throw new Exception("Zła Litera ");
             }
         }
 

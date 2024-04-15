@@ -1,22 +1,46 @@
 ﻿using ChallengeApp2;
+using System;
+using System.Reflection;
 
 Console.WriteLine("Witamy w Programie oceny Pracowników XYZ");
 Console.WriteLine("========================================");
 Console.WriteLine();
-Console.WriteLine("Podaj ocenę Pracownika : ");
+
 
 var employee = new Employee ();
 
-while(true)
+//try
+//{
+//    Employee emp = null;
+//    var name = emp.Surname;
+//}
+//catch(Exception exception)
+//{
+//    Console.WriteLine(exception.Message);
+//}
+//finally 
+//{
+//    Console.WriteLine("Finally here : ");
+//}
+
+while (true)
 {
     Console.WriteLine("Podaj kolejną ocenę pracownika");
     var input = Console.ReadLine();
-   
+
     if (input == "q")
     {
         break;
     }
-    employee.AddGrade(input);
+
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"Znaleziono wyjątek :  {e.Message}");
+    }
 }
 
 var statistics = employee.GetStatisticsWithForeEach();
