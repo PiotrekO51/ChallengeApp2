@@ -20,6 +20,9 @@ while(true)
 }
 
 var statistics = employee.GetStatisticsWithForeEach();
+Console.WriteLine("========================================");
+Console.WriteLine("Statystyki wyników : ");
+Console.WriteLine("========================================");
 Console.WriteLine($" Wartość Max: {statistics.Max}");
 Console.WriteLine($" Średnia wartość: {statistics.Average:N2}");
 Console.WriteLine($" Wartość Min: {statistics.Min}");
