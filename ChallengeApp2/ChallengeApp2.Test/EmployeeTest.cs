@@ -51,9 +51,10 @@ namespace ChallengeApp2.Test
         public void StatisticsCharLetterA()
         {
             var employee = new Employee();
-            employee.AddGrade("A");
-                        
+            employee.AddGrade(80);
+            
             var statistics = employee.GetStatisticsWithForeEach();
+
             Assert.AreEqual('A', statistics.AverageLetther);
 
         }
@@ -61,10 +62,22 @@ namespace ChallengeApp2.Test
         public void StatisticsCharLetterB()
         {
             var employee = new Employee();
-            employee.AddGrade('B');
+            employee.AddGrade(60);
 
             var statistics = employee.GetStatisticsWithForeEach();
+
             Assert.AreEqual('B', statistics.AverageLetther);
+
+        }
+        [Test]
+        public void StatisticsCharLetterC()
+        {
+            var employee = new Employee();
+            employee.AddGrade(40);
+
+            var statistics = employee.GetStatisticsWithForeEach();
+
+            Assert.AreEqual('C', statistics.AverageLetther);
 
         }
     }

@@ -1,4 +1,6 @@
-﻿namespace ChallengeApp2
+﻿using System.Data;
+
+namespace ChallengeApp2
 {
     public class Employee
     {
@@ -34,9 +36,7 @@
             {
                 
                 Console.WriteLine("Wartość nie może być większa niż 100 ");
-            }
-
-            
+            }      
         }
 
         public void AddGrade(double grade)
@@ -47,24 +47,32 @@
 
         public void AddGrade(long grade)
         {
-            var result = (float)grade;
-            this.AddGrade(result);
+            this.AddGrade((float)grade);
         }
-
+        
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
-                this.AddGrade(result);
+                this.AddGrade(result);   
+            }
+            else if (char.TryParse(grade, out char charresult))
+            {
+                this.AddGrade(charresult);
+            }
+            else
+            {
+                Console.WriteLine("Wprowadzone znaki nie są liczbami ");
             }
         }
+
         public void AddGrade(char grade)
         { 
             switch (grade)
             {
                 case 'A':
                 case 'a':
-                    this.grades.Add(100);
+                    this.AddGrade(100);
                     break;
                 case 'B':
                 case 'b':
