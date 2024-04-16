@@ -1,25 +1,32 @@
-﻿using System.Data;
-
-namespace ChallengeApp2
+﻿namespace ChallengeApp2
 {
-    public class Employee
+    public class Employee :Person
     {
         private const char sex = 'M';
 
         private List<float> grades = new List<float>();
 
         public Employee()
-        {
+           : base("no name","no surname","no sex")
+        {    
+        }
+        public Employee(string name)
+           : base(name, "no surname", "no sex")
+        {      
+        }
 
-        }
-        public Employee(string name, string surename)
+        public Employee(string name, string surname)
+           : base(name, surname, "no sex")
         {
-            this.Name = name;
-            this.Surname = surename;
         }
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
+        public Employee(string name, string surname, string sex)
+            : base(name,surname,sex)
+        {
+            //var i = this.counter = 0;   
+        }
+
        
+
         public void AddGrade(float grade)
         {
 

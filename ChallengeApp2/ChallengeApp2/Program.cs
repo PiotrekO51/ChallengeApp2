@@ -1,13 +1,11 @@
 ﻿using ChallengeApp2;
-using System;
-using System.Reflection;
 
 Console.WriteLine("Witamy w Programie oceny Pracowników XYZ");
 Console.WriteLine("========================================");
 Console.WriteLine();
 
 
-var employee = new Employee ();
+var employee = new Employee();
 
 //try
 //{
