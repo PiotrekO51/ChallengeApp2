@@ -1,13 +1,11 @@
 ﻿namespace ChallengeApp2
 {
-    public class Employee :IEmployee
+    public class Supervisor : IEmployee
 
     {
-        private const char sex = 'M';
-
         private List<float> grades = new List<float>();
 
-        public Employee(string name, string surname)
+        public Supervisor(string name, string surname)
 
         {
             this.Name = name;
@@ -15,12 +13,12 @@
         }
         public string Name { get; private set; }
         public string Surname { get; private set; }
-    
-       
-            //this.Name = name;
-            //this.Surname = surname;
-            //this.Sex = sex;
-       
+
+
+        //this.Name = name;
+        //this.Surname = surname;
+        //this.Sex = sex;
+
         //public string Name { get; private set; }
         //public string Surname { get; private set; }
         //public string Sex { get; private set; }
@@ -28,48 +26,56 @@
 
         public void AddGrade(float grade)
         {
-
-            if (grade >= 0 && grade <= 100)
-            {
-                
-                this.grades.Add(grade);
-            }
-
-            else if (grade < 0)
-            { 
-                throw new Exception("Wartość nie może być mniejsza od 0 ");
-            }
-            
-            else if (grade > 100)
-            {
-                throw new Exception("Wartość nie może być większa niż 100 ");
-            }      
+            this.grades.Add(grade);
         }
 
         public void AddGrade(double grade)
         {
-            var result = (float)grade;
-            this.AddGrade(result);
+            
         }
-     
+
         public void AddGrade(string grade)
         {
-            if (float.TryParse(grade, out float result))
+           
+            switch (grade)
             {
-                this.AddGrade(result);   
-            }
-            else if (char.TryParse(grade, out char charresult))
-            {
-                this.AddGrade(charresult);
-            }
-            else
-            {
-               throw new Exception("Wprowadzone znaki nie są liczbami ");
+                case "6":
+
+                    this.AddGrade(100);
+                    break;
+                case "5":
+
+                    this.AddGrade(80);
+                    break;
+                case "4":
+
+                    this.AddGrade(60);
+                    break;
+
+                case "3":
+                    this.AddGrade(40);
+                    break;
+                case "-3":
+                case "3-":
+                    this.AddGrade(35);
+                    break;
+                case "+2":
+                case "2+":
+                    this.AddGrade(25);
+                    break;
+                case "2":
+                    this.AddGrade(20);
+                    break;
+                case "1":
+                    this.AddGrade(0);
+                    break;
+                default:
+                    throw new Exception("Zła Ocena = oceny od 1 do 6 lub od A do E ");
             }
         }
 
         public void AddGrade(char grade)
-        { 
+        {
             switch (grade)
             {
                 case 'A':
@@ -92,10 +98,11 @@
                 case 'e':
                     this.AddGrade(20);
                     break;
-               default:
-                    throw new Exception("Zła Litera ");
+                default:
+                    throw new Exception("Zła Litera = litery od E do E ");
             }
         }
+        
 
         public Statistics GetStatisticsWithForeEach()
         {
@@ -108,7 +115,7 @@
             {
                 statistics.Max = Math.Max(statistics.Max, grade);
                 statistics.Min = Math.Min(statistics.Min, grade);
-               
+
                 statistics.Average += grade;
             }
 
@@ -130,10 +137,11 @@
                     break;
                 default:
                     statistics.AverageLetther = 'E';
-                    break;   
+                    break;
             }
 
-           return statistics;
+            return statistics;
         }
+
     }
 }
