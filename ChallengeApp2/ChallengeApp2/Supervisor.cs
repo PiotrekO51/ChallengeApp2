@@ -26,17 +26,28 @@
 
         public void AddGrade(float grade)
         {
-            this.grades.Add(grade);
-        }
-
-        public void AddGrade(double grade)
-        {
-            
+            if (grade >= 7 && grade <= 100 )
+            {
+                this.grades.Add(grade);
+            }
+           
         }
 
         public void AddGrade(string grade)
         {
-           
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else if (char.TryParse(grade, out char charresult))
+            {
+                this.AddGrade(charresult);
+            }
+            //else
+            //{
+                //throw new Exception("Wprowadzone znaki nie są liczbami ");
+            //}
+
             switch (grade)
             {
                 case "6":
@@ -69,14 +80,14 @@
                 case "1":
                     this.AddGrade(0);
                     break;
-                default:
-                    throw new Exception("Zła Ocena = oceny od 1 do 6 lub od A do E ");
+                    //default :
+                    //throw new Exception("Wprowadzone znaki nie są ocenami ");
             }
         }
-
+        
         public void AddGrade(char grade)
         {
-            switch (grade)
+            switch (grade) 
             {
                 case 'A':
                 case 'a':
@@ -102,9 +113,8 @@
                     throw new Exception("Zła Litera = litery od E do E ");
             }
         }
-        
-
-        public Statistics GetStatisticsWithForeEach()
+ 
+            public Statistics GetStatisticsWithForeEach()
         {
             var statistics = new Statistics();
             statistics.Average = 0;

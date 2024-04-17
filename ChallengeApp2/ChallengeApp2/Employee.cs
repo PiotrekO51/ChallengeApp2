@@ -1,4 +1,4 @@
-﻿namespace ChallengeApp2
+﻿﻿namespace ChallengeApp2
 {
     public class Employee :IEmployee
 
@@ -46,11 +46,7 @@
             }      
         }
 
-        public void AddGrade(double grade)
-        {
-            var result = (float)grade;
-            this.AddGrade(result);
-        }
+     
      
         public void AddGrade(string grade)
         {

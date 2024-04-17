@@ -6,8 +6,8 @@ Console.WriteLine("========================================");
 Console.WriteLine();
 
 
-var employee = new Employee("Piotr","Obłój");
-var supervisor = new Supervisor ("Jan","Kowalski");
+var employee = new Employee("Piotr", "Obłój");
+var supervisor = new Supervisor("Jan", "Kowalski");
 //try
 //{
 //    Employee emp = null;
@@ -43,7 +43,7 @@ while (input == "P")
     {
         Console.WriteLine($"Znaleziono wyjątek :  {e.Message}");
     }
-    
+
 }
 
 while (input == "S")
