@@ -43,12 +43,9 @@
             {
                 this.AddGrade(charresult);
             }
-            //else
-            //{
-                //throw new Exception("Wprowadzone znaki nie są liczbami ");
-            //}
 
-            switch (grade)
+
+                switch (grade)
             {
                 case "6":
 

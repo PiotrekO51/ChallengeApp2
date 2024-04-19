@@ -1,6 +1,6 @@
 ﻿namespace ChallengeApp2
 {
-    public abstract class Person //:System.Object
+    public abstract class Person
 
     {
        //protected int counter;
