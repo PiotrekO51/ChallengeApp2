@@ -84,7 +84,7 @@ if (input == "P" || input == "p")
 {
     var statistics = employee.GetStatisticsWithForeEach();
     Console.WriteLine("========================================");
-    Console.WriteLine("Statystyki wyników Supervisora ");
+    Console.WriteLine("Statystyki wyników pracownika Piotr ");
     Console.WriteLine("========================================");
     Console.WriteLine($" Wartość Max: {statistics.Max}");
     Console.WriteLine($" Średnia wartość: {statistics.Average:N2}");
@@ -96,7 +96,7 @@ else if (input == "S" || input == "s")
 {
     var statistics2 = employee1.GetStatisticsWithForeEach();
     Console.WriteLine("========================================");
-    Console.WriteLine("Statystyki wyników Supervisora ");
+    Console.WriteLine("Statystyki wyników Paweł ");
     Console.WriteLine("========================================");
     Console.WriteLine($" Wartość Max: {statistics2.Max}");
     Console.WriteLine($" Średnia wartość: {statistics2.Average:N2}");
@@ -107,7 +107,7 @@ else if (input == "F" || input == "f")
 {
     var statistics3 = employee2.GetStatisticsWithForeEach();
     Console.WriteLine("========================================");
-    Console.WriteLine("Statystyki wyników Supervisora ");
+    Console.WriteLine("Statystyki wyników Supervizora ");
     Console.WriteLine("========================================");
     Console.WriteLine($" Wartość Max: {statistics3.Max}");
     Console.WriteLine($" Średnia wartość: {statistics3.Average:N2}");
