@@ -5,9 +5,9 @@ Console.WriteLine("========================================");
 Console.WriteLine();
 
 
+var employee = new EmployeeInMemory("Piotr", "Obłój");
 
-var supervisor = new Supervisor("Jan", "Kowalski");
-var pracownik = new EmployeeInMemory("Paweł", "Obłój");
+//var pracownik = new EmployeeInMemory("Paweł", "Obłój");
 var employee1 = new EmployeeInFile("Piotr", "Obłój");
 
 //employee1.AddGrade(20F);
@@ -38,31 +38,31 @@ while (input == "F")
     }
 }
 
-    if (input == "S")
-{
-    var statistics2 = supervisor.GetStatisticsWithForeEach();
-    Console.WriteLine("========================================");
-    Console.WriteLine("Statystyki wyników Supervisora ");
-    Console.WriteLine("========================================");
-    Console.WriteLine($" Wartość Max: {statistics2.Max}");
-    Console.WriteLine($" Średnia wartość: {statistics2.Average:N2}");
-    Console.WriteLine($" Wartość Min: {statistics2.Min}");
-    Console.WriteLine($" Średnia wartość: {statistics2.AverageLetther:N2}");
-}
+//    if (input == "S")
+//{
+//    var statistics2 = supervisor.GetStatisticsWithForeEach();
+//    Console.WriteLine("========================================");
+//    Console.WriteLine("Statystyki wyników Supervisora ");
+//    Console.WriteLine("========================================");
+//    Console.WriteLine($" Wartość Max: {statistics2.Max}");
+//    Console.WriteLine($" Średnia wartość: {statistics2.Average:N2}");
+//    Console.WriteLine($" Wartość Min: {statistics2.Min}");
+//    Console.WriteLine($" Średnia wartość: {statistics2.AverageLetther:N2}");
+//}
 
-else if (input == "P")
-{
-    var statistics2 = pracownik.GetStatisticsWithForeEach();
-    Console.WriteLine("========================================");
-    Console.WriteLine("Statystyki wyników Supervisora ");
-    Console.WriteLine("========================================");
-    Console.WriteLine($" Wartość Max: {statistics2.Max}");
-    Console.WriteLine($" Średnia wartość: {statistics2.Average:N2}");
-    Console.WriteLine($" Wartość Min: {statistics2.Min}");
-    Console.WriteLine($" Średnia wartość: {statistics2.AverageLetther:N2}");
-}
+//else if (input == "P")
+//{
+//    var statistics2 = pracownik.GetStatisticsWithForeEach();
+//    Console.WriteLine("========================================");
+//    Console.WriteLine("Statystyki wyników Supervisora ");
+//    Console.WriteLine("========================================");
+//    Console.WriteLine($" Wartość Max: {statistics2.Max}");
+//    Console.WriteLine($" Średnia wartość: {statistics2.Average:N2}");
+//    Console.WriteLine($" Wartość Min: {statistics2.Min}");
+//    Console.WriteLine($" Średnia wartość: {statistics2.AverageLetther:N2}");
+//}
 
-else if (input == "F")
+if (input == "F")
 {
     var statistics2 = employee1.GetStatisticsWithForeEach();
     Console.WriteLine("========================================");

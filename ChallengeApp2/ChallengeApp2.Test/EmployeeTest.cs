@@ -6,7 +6,7 @@ namespace ChallengeApp2.Test
         public void StatisticsCollectReturnMaxValue()
         {
               //arrange
-                var employee = new Employee();
+                var employee = new EmployeeInMemory("Piotr","Ob³ój");
                 employee.AddGrade(5);
                 employee.AddGrade(6);
                 employee.AddGrade(9);
@@ -22,7 +22,7 @@ namespace ChallengeApp2.Test
         public void StatisticsCollectReturnMinValue()
         {
             //arrange
-            var employee = new Employee( );
+            var employee = new EmployeeInMemory("Piotr", "Ob³ój");
             employee.AddGrade(5);
             employee.AddGrade(6);
             employee.AddGrade(9);
@@ -38,7 +38,7 @@ namespace ChallengeApp2.Test
         public void StatisticsCollectReturnAverageValue()
         {
             //arrange
-            var employee = new Employee();
+            var employee = new EmployeeInMemory("Piotr", "Ob³ój");
             employee.AddGrade(5);
             employee.AddGrade(6);
             employee.AddGrade(9);
@@ -50,7 +50,7 @@ namespace ChallengeApp2.Test
         [Test]
         public void StatisticsCharLetterA()
         {
-            var employee = new Employee();
+            var employee = new EmployeeInMemory("Piotr", "Ob³ój");
             employee.AddGrade(80);
             
             var statistics = employee.GetStatisticsWithForeEach();
@@ -61,7 +61,7 @@ namespace ChallengeApp2.Test
         [Test]
         public void StatisticsCharLetterB()
         {
-            var employee = new Employee();
+            var employee = new EmployeeInMemory("Piotr", "Ob³ój");
             employee.AddGrade(60);
 
             var statistics = employee.GetStatisticsWithForeEach();
@@ -72,7 +72,7 @@ namespace ChallengeApp2.Test
         [Test]
         public void StatisticsCharLetterC()
         {
-            var employee = new Employee();
+            var employee = new EmployeeInMemory("Piotr", "Ob³ój");
             employee.AddGrade(40);
 
             var statistics = employee.GetStatisticsWithForeEach();

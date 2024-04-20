@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace ChallengeApp2
+﻿namespace ChallengeApp2
 {
     public class EmployeeInFile : EmployeeBase
     {
@@ -17,9 +15,10 @@ namespace ChallengeApp2
         //    Console.WriteLine("Hi !!");
         //    base.SayHellow();
         //}
+       
         public override void AddGrade(float grade)
         {
-            
+
         }
         public override void AddGrade(char grade)
         {
@@ -28,9 +27,8 @@ namespace ChallengeApp2
         public override void AddGrade(string grade)
         {
             using (var writer = File.AppendText(fileName))
-            {
-                writer.WriteLine(grade);
-            }
+            writer.WriteLine(grade);
+
         }
        
         public override Statistics GetStatisticsWithForeEach()

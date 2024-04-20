@@ -44,30 +44,30 @@
         public void GetEmployeeReturnDifferentName()
         {
             //arrange
-            var Employee1 = GetEmployee("Piotr", "Nowak");
-            var Employee2 = GetEmployee("Piotr", "Nowak");
+            var employee1 = GetEmployee("Piotr", "Nowak");
+            var employee2 = GetEmployee("Piotr", "Nowak");
 
             //act
 
             //assert
-            Assert.AreEqual(Employee1.Name , Employee2.Name);
+            Assert.AreEqual(employee1.Name , employee2.Name);
         }
         [Test]
         public void GetEmployeeReturnDifferentSurname()
         {
             //arrange
-            var Employee1 = GetEmployee("Piotr", "Nowak");
-            var Employee2 = GetEmployee("Piotr", "Nowak");
+            var employee1 = GetEmployee("Piotr", "Nowak");
+            var employee2 = GetEmployee("Piotr", "Nowak");
 
             //act
 
            //assert
-            Assert.AreEqual(Employee1.Surname, Employee2.Surname);
+            Assert.AreEqual(employee1.Surname, employee2.Surname);
         }
 
-        private Employee GetEmployee(string name, string surname)
+        private EmployeeInMemory GetEmployee(string name, string surname)
         {
-            return new Employee(name, surname);
+            return new EmployeeInMemory(name, surname);
         }
     }
 }

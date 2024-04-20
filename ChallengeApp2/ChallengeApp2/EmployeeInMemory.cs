@@ -1,26 +1,29 @@
-﻿
-namespace ChallengeApp2
+﻿namespace ChallengeApp2
 {
     public class EmployeeInMemory : EmployeeBase
     {
+
+        public delegate void GradeAddedDelegdate(object sender, EventArgs args);
+
+        public event GradeAddedDelegdate GradeAdded;
+
         private List<float> grades = new List<float>();
-        public EmployeeInMemory(string name, string surname) 
+        public EmployeeInMemory(string name, string surname)
             : base(name, surname)
         {
+
         }
-
-        //public override void SayHellow()
-        //{
-        //    Console.WriteLine("Hi !!");
-        //    base.SayHellow();
-        //}
-
+     
         public override void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
             {
-
                 this.grades.Add(grade);
+
+                if(GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
 
             else if (grade < 0)
