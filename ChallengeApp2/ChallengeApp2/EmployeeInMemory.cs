@@ -85,6 +85,13 @@
         {
         }
 
+        public override void AddGrade(int grade)
+        {
+        }
+        public override void AddGrade(double grade)
+        {
+        }
+
         public override Statistics GetStatisticsWithForeEach()
         {
             var statistics = new Statistics();

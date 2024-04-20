@@ -5,6 +5,7 @@
         public delegate void GradeAddedDelegdate(object sender, EventArgs args);
 
         public event GradeAddedDelegdate GradeAdded;
+
         private List<float> grades = new List<float>();
 
         public Supervisor(string name, string surname)
@@ -78,11 +79,15 @@
                 case "1":
                     this.AddGrade(0);
                     break;
-                    //default :
-                    //throw new Exception("Wprowadzone znaki nie są ocenami ");
+                    default :
+                    throw new Exception("Wprowadzone znaki nie są ocenami ");
             }
         }
-        
+        public override void AddGrade(int grade)
+        { }
+            public override void AddGrade(double grade)
+        { }
+
         public override void AddGrade(char grade)
         {
             switch (grade) 

@@ -22,7 +22,11 @@
 
         public abstract void AddGrade(float grade);
 
+        public abstract void AddGrade(double grade);
+
         public abstract void AddGrade(string grade);
+
+        public abstract void AddGrade(int grade);
         public virtual void SayHellow()
         {
             Console.WriteLine($"Hello ! I em {Name} {Surname}");

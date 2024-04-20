@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Data;
+using System.Diagnostics;
 
 namespace ChallengeApp2
 {
@@ -8,34 +9,75 @@ namespace ChallengeApp2
 
         public event GradeAddedDelegdate GradeAdded;
 
-        private const string fileName = "grades.text";
+        private const string fileName = "grades.Text";
 
 
         public EmployeeInFile(string name, string surname)
             : base(name, surname)
         {
-
         }
-        //public override void SayHellow()
-        //{
-        //    Console.WriteLine("Hi !!");
-        //    base.SayHellow();
-        //}
-       
+
         public override void AddGrade(float grade)
         {
-            
         }
-        public override void AddGrade(char grade)
+
+        public override void AddGrade(int grade)
         {
+            float gradeAsFloat = grade;
+            this.AddGrade(gradeAsFloat);
         }
+
+        public override void AddGrade(double grade)
+        {
+            float gradeAsFloat = (float)grade;
+            this.AddGrade(gradeAsFloat);
+        }
+
+        public override void AddGrade(char grade)
+        { 
+        }
+
 
         public override void AddGrade(string grade)
         {
             using (var writer = File.AppendText(fileName))
-                writer.WriteLine(grade);
+            {
+               
+                switch (grade)
+                {
+                    case "A":
+                    case "a":
+                        writer.WriteLine(100);
+                        break;
+                    case "B":
+                    case "b":
+                        writer.WriteLine(80);
+                        break;
+                    case "c":
+                    case "C":
+                        writer.WriteLine(60);
+                        break;
+                    case "D":
+                    case "d":
+                        writer.WriteLine(40);
+                        break;
+                    case "E":
+                    case "e":
+                        writer.WriteLine(20);
+                        break;
+                    case "F":
+                    case "f":
+                        writer.WriteLine(80);
+                        break;
+                }
+
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
+            }
         }
-       
+
         public override Statistics GetStatisticsWithForeEach()
         {
             var gradesFromFile = this.ReadGradesFromFile();
@@ -82,7 +124,7 @@ namespace ChallengeApp2
 
                     statistics.Average += grade;
                 }
-                
+
             }
             statistics.Average /= grades.Count;
 
@@ -106,6 +148,37 @@ namespace ChallengeApp2
             }
             return statistics;
         }
-    
-    }      
+    }
 }
+
+//switch (grade)
+//{
+//    case 'A':
+//    case 'a':
+//        this.AddGrade(100);
+//        break;
+//    case 'B':
+//    case 'b':
+//        this.AddGrade(80);
+//        break;
+//    case 'C':
+//    case 'c':
+//        this.AddGrade(60);
+//        break;
+//    case 'D':
+//    case 'd':
+//        this.AddGrade(40);
+//        break;
+//    case 'E':
+//    case 'e':
+//        this.AddGrade(20);
+//        break;
+//    default:
+//        throw new Exception("Zła Litera ");
+//}
+
+//public override void SayHellow()
+//{
+//    Console.WriteLine("Hi !!");
+//    base.SayHellow();
+//}
