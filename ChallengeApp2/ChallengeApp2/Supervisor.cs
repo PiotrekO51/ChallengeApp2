@@ -1,19 +1,17 @@
 ﻿namespace ChallengeApp2
 {
-    public class Supervisor : IEmployee
-
+    public class Supervisor : EmployeeBase
     {
+        public delegate void GradeAddedDelegdate(object sender, EventArgs args);
+
+        public event GradeAddedDelegdate GradeAdded;
         private List<float> grades = new List<float>();
 
         public Supervisor(string name, string surname)
-
+             : base(name, surname)
         {
-            this.Name = name;
-            this.Surname = surname;
+            
         }
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
-
 
         //this.Name = name;
         //this.Surname = surname;
@@ -24,16 +22,19 @@
         //public string Sex { get; private set; }
 
 
-        public void AddGrade(float grade)
+        public override void AddGrade(float grade)
         {
-            if (grade >= 7 && grade <= 100 )
+            if (grade >= 7 && grade <= 100)
             {
                 this.grades.Add(grade);
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
-           
         }
 
-        public void AddGrade(string grade)
+        public override void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
@@ -82,7 +83,7 @@
             }
         }
         
-        public void AddGrade(char grade)
+        public override void AddGrade(char grade)
         {
             switch (grade) 
             {
@@ -111,7 +112,7 @@
             }
         }
  
-            public Statistics GetStatisticsWithForeEach()
+            public override Statistics GetStatisticsWithForeEach()
         {
             var statistics = new Statistics();
             statistics.Average = 0;

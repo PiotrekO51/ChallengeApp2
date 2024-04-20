@@ -8,10 +8,10 @@
         public event GradeAddedDelegdate GradeAdded;
 
         private List<float> grades = new List<float>();
+
         public EmployeeInMemory(string name, string surname)
             : base(name, surname)
         {
-
         }
      
         public override void AddGrade(float grade)

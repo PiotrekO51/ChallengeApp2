@@ -1,8 +1,15 @@
 ﻿namespace ChallengeApp2
 {
+
+
     public abstract class EmployeeBase : IEmployee
-    {
+    { 
+        public delegate void GradeAddedDelegdate(object sender, EventArgs args);
+
+        public event GradeAddedDelegdate GradeAdded;
+
         public EmployeeBase(string name, string surname)
+          
         {
             Name = name;
             Surname = surname;

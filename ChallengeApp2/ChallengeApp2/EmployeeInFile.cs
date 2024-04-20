@@ -1,7 +1,13 @@
-﻿namespace ChallengeApp2
+﻿using System.Diagnostics;
+
+namespace ChallengeApp2
 {
     public class EmployeeInFile : EmployeeBase
     {
+        public delegate void GradeAddedDelegdate(object sender, EventArgs args);
+
+        public event GradeAddedDelegdate GradeAdded;
+
         private const string fileName = "grades.text";
 
 
@@ -18,7 +24,7 @@
        
         public override void AddGrade(float grade)
         {
-
+            
         }
         public override void AddGrade(char grade)
         {
@@ -27,8 +33,7 @@
         public override void AddGrade(string grade)
         {
             using (var writer = File.AppendText(fileName))
-            writer.WriteLine(grade);
-
+                writer.WriteLine(grade);
         }
        
         public override Statistics GetStatisticsWithForeEach()
@@ -51,6 +56,11 @@
                         grades.Add(number);
                         line = reader.ReadLine();
                     }
+                    if (GradeAdded != null)
+                    {
+                        GradeAdded(this, new EventArgs());
+                    }
+
                 }
             }
             return grades;
