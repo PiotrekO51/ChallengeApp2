@@ -36,6 +36,17 @@
                 throw new Exception("Wartość nie może być większa niż 100 ");
             }
         }
+        public override void AddGrade(int grade)
+        {
+            float gradeAsFloat = grade;
+            this.AddGrade(gradeAsFloat);
+        }
+
+        public override void AddGrade(double grade)
+        {
+            float gradeAsFloat = (float)grade;
+            this.AddGrade(gradeAsFloat);
+        }
 
         public override void AddGrade(string grade)
         {
@@ -58,15 +69,15 @@
                         break;
                     case 'C':
                     case 'c':
-                        this.AddGrade(60);
+                        AddGrade(60);
                         break;
                     case 'D':
                     case 'd':
-                        this.AddGrade(40);
+                        AddGrade(40);
                         break;
                     case 'E':
                     case 'e':
-                        this.AddGrade(20);
+                        AddGrade(20);
                         break;
                     default:
                         throw new Exception("Zła Litera ");
@@ -77,19 +88,12 @@
             {
                 throw new Exception("Wprowadzone znaki nie są liczbami ");
             }
-
-          
         }
 
         public override void AddGrade(char grade)
         {
-        }
-
-        public override void AddGrade(int grade)
-        {
-        }
-        public override void AddGrade(double grade)
-        {
+            float gradeAsFloat = (float)grade;
+            this.AddGrade(gradeAsFloat);
         }
 
         public override Statistics GetStatisticsWithForeEach()

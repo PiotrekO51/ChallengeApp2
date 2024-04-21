@@ -1,7 +1,6 @@
 ﻿namespace ChallengeApp2
 {
 
-
     public abstract class EmployeeBase : IEmployee
     { 
         public delegate void GradeAddedDelegdate(object sender, EventArgs args);
@@ -34,7 +33,5 @@
         public abstract void AddGrade(char grade);
 
         public abstract Statistics GetStatisticsWithForeEach();
-
-       
     }
 }

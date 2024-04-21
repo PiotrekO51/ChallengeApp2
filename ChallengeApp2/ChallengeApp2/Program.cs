@@ -11,7 +11,6 @@ var employee2 = new EmployeeInFile("Paweł", "Obłój");
 employee.GradeAdded += EmployeeGradeAdded;
 employee1.GradeAdded += EmployeeGradeAdded;
 employee2.GradeAdded += EmployeeGradeAdded;
-//employee.AddGrade(0.5f);
 
 void EmployeeGradeAdded (object sender, EventArgs arg)
 {
@@ -114,6 +113,3 @@ else if (input == "F" || input == "f")
     Console.WriteLine($" Wartość Min: {statistics3.Min}");
     Console.WriteLine($" Średnia wartość: {statistics3.AverageLetther:N2}");
 }
-
-
-

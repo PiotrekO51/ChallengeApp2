@@ -19,6 +19,8 @@ namespace ChallengeApp2
 
         public override void AddGrade(float grade)
         {
+            float gradeAsFloat = (float)grade;
+            this.AddGrade(gradeAsFloat);
         }
 
         public override void AddGrade(int grade)
@@ -34,9 +36,10 @@ namespace ChallengeApp2
         }
 
         public override void AddGrade(char grade)
-        { 
+        {
+            float gradeAsFloat = (float)grade;
+            this.AddGrade(gradeAsFloat);
         }
-
 
         public override void AddGrade(string grade)
         {
@@ -150,35 +153,3 @@ namespace ChallengeApp2
         }
     }
 }
-
-//switch (grade)
-//{
-//    case 'A':
-//    case 'a':
-//        this.AddGrade(100);
-//        break;
-//    case 'B':
-//    case 'b':
-//        this.AddGrade(80);
-//        break;
-//    case 'C':
-//    case 'c':
-//        this.AddGrade(60);
-//        break;
-//    case 'D':
-//    case 'd':
-//        this.AddGrade(40);
-//        break;
-//    case 'E':
-//    case 'e':
-//        this.AddGrade(20);
-//        break;
-//    default:
-//        throw new Exception("Zła Litera ");
-//}
-
-//public override void SayHellow()
-//{
-//    Console.WriteLine("Hi !!");
-//    base.SayHellow();
-//}
