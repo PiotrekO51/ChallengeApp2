@@ -1,5 +1,4 @@
-﻿using System.Reflection.PortableExecutable;
-
+﻿
 namespace ChallengeApp2
 {
     public class Statistics
@@ -45,15 +44,14 @@ namespace ChallengeApp2
         {
             this.Count = 0; 
             this.Sum = 0;
-            this.Max = 0;
-            this.Min = 0;
-
+            this.Min = float.MaxValue;
+            this.Max = float.MinValue;
         }
         public void AddGrade(float grade)
         {
             this.Count++;
             this.Sum += grade;
-            this.Min =Math.Min(grade, this.Min);
+            this.Min = Math.Min(grade, this.Min);
             this.Max = Math.Max(grade, this.Max);
         }
     }

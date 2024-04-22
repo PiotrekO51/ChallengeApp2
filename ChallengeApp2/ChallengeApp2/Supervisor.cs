@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Design;
-
-namespace ChallengeApp2
+﻿namespace ChallengeApp2
 {
     public class Supervisor : EmployeeBase
     {
@@ -70,6 +68,9 @@ namespace ChallengeApp2
                     case "2":
                     case "+2":
                         this.AddGrade(20);
+                        break;
+                    case "1":
+                        this.AddGrade(0);
                         break;
                     default:
                         throw new Exception("Zła ocena - litery od 1 do 6 -");
