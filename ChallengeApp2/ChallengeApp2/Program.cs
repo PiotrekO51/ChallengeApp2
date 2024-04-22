@@ -22,7 +22,7 @@ var input = Console.ReadLine();
 
 while (input == "P" || input == "p")
 {
-    Console.WriteLine("Podaj kolejną ocenę pracownika");
+    Console.WriteLine(" Podaj wartość oceny pracownika od 1 do 100 lub od A DO E");
     var input1 = Console.ReadLine();
 
     if (input1 == "q")
@@ -41,7 +41,7 @@ while (input == "P" || input == "p")
 }
 while (input == "S" || input == "s")
 {
-    Console.WriteLine("Podaj kolejną ocenę pracownika");
+    Console.WriteLine(" Podaj wartość oceny pracownika od 1 do 6 lub od A do E ");
     var input2 = Console.ReadLine();
 
     if (input2 == "q")
@@ -61,7 +61,7 @@ while (input == "S" || input == "s")
 
 while (input == "F" || input == "f")
 {
-    Console.WriteLine("Podaj kolejną ocenę pracownika");
+    Console.WriteLine(" Podaj wartość oceny pracownika od 1 do 6 lub od A do E ");
     var input3 = Console.ReadLine();
 
     if (input3 == "q")

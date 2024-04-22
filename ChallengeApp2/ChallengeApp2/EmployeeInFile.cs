@@ -19,7 +19,7 @@ namespace ChallengeApp2
 
         public override void AddGrade(float grade)
         {
-            float gradeAsFloat = (float)grade;
+            float gradeAsFloat = grade;
             this.AddGrade(gradeAsFloat);
         }
 
@@ -41,11 +41,12 @@ namespace ChallengeApp2
             this.AddGrade(gradeAsFloat);
         }
 
+
         public override void AddGrade(string grade)
         {
             using (var writer = File.AppendText(fileName))
             {
-               
+
                 switch (grade)
                 {
                     case "A":
@@ -68,13 +69,33 @@ namespace ChallengeApp2
                     case "e":
                         writer.WriteLine(20);
                         break;
-                    case "F":
                     case "f":
+                    case "F":
+                        writer.WriteLine(0);
+                        break;
+                    case "6":
+                        writer.WriteLine(100);
+                        break;
+                    case "5":
                         writer.WriteLine(80);
                         break;
+                    case "4":
+                        writer.WriteLine(60);
+                        break;
+                    case "3":
+                        writer.WriteLine(40);
+                        break;
+                    case "2":
+                        writer.WriteLine(20);
+                        break;
+                    case "1":
+                        writer.WriteLine(0);
+                        break;
+                         default:
+                        throw new Exception("Zła Litera lub wartość ");
                 }
 
-                if (GradeAdded != null)
+                if (GradeAdded != null )
                 {
                     GradeAdded(this, new EventArgs());
                 }
@@ -114,42 +135,15 @@ namespace ChallengeApp2
         private Statistics CountStatistics(List<float> grades)
         {
             var statistics = new Statistics();
-            statistics.Average = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
+            
 
             foreach (var grade in grades)
             {
-                if (grade >= 0)
-                {
-                    statistics.Max = Math.Max(statistics.Max, grade);
-                    statistics.Min = Math.Min(statistics.Min, grade);
-
-                    statistics.Average += grade;
-                }
-
+                statistics.AddGrade(grade); 
             }
-            statistics.Average /= grades.Count;
-
-            switch (statistics.Average)
-            {
-                case var average when average >= 80:
-                    statistics.AverageLetther = 'A';
-                    break;
-                case var average when average >= 60:
-                    statistics.AverageLetther = 'B';
-                    break;
-                case var average when average >= 40:
-                    statistics.AverageLetther = 'C';
-                    break;
-                case var average when average >= 20:
-                    statistics.AverageLetther = 'D';
-                    break;
-                default:
-                    statistics.AverageLetther = 'E';
-                    break;
-            }
+           
             return statistics;
         }
     }
 }
+

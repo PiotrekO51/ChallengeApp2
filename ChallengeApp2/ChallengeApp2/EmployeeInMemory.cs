@@ -86,7 +86,7 @@
 
             else
             {
-                throw new Exception("Wprowadzone znaki nie są liczbami ");
+                throw new Exception("Wprowadzone znaki nie są liczbami. ");
             }
         }
 
@@ -99,37 +99,10 @@
         public override Statistics GetStatisticsWithForeEach()
         {
             var statistics = new Statistics();
-            statistics.Average = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
 
-            foreach (var grade in this.grades)
+            foreach (var grade in this.grades) 
             {
-                statistics.Max = Math.Max(statistics.Max, grade);
-                statistics.Min = Math.Min(statistics.Min, grade);
-
-                statistics.Average += grade;
-            }
-
-            statistics.Average /= this.grades.Count;
-
-            switch (statistics.Average)
-            {
-                case var average when average >= 80:
-                    statistics.AverageLetther = 'A';
-                    break;
-                case var average when average >= 60:
-                    statistics.AverageLetther = 'B';
-                    break;
-                case var average when average >= 40:
-                    statistics.AverageLetther = 'C';
-                    break;
-                case var average when average >= 20:
-                    statistics.AverageLetther = 'D';
-                    break;
-                default:
-                    statistics.AverageLetther = 'E';
-                    break;
+                statistics.AddGrade(grade);
             }
 
             return statistics;
